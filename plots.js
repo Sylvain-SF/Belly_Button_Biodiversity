@@ -10,21 +10,26 @@ function init() {
         .text(sample)
         .property("value", sample);
     });
-})}
+    var firstSample = sampleNames[0];
+    buildMetadata(firstSample);
+    // buildCharts(firstSample);
+});
+}
 
 init();
 
 function optionChanged(newSample) {
+
   buildMetadata(newSample);
-  //buildCharts(newSample);
-}
+  // buildCharts(newSample);
+};
 
 function buildMetadata(sample) {
   d3.json("samples.json").then((data) => {
     var metadata = data.metadata;
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = resultArray[0];
-    var result = data.metadata[0];
+
 
     var PANEL = d3.select("#sample-metadata");
     PANEL.html("");
