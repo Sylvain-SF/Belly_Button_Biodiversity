@@ -69,7 +69,7 @@ function buildCharts(sample) {
         console.log(firstSample);
 
         // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-        var ids = firstSample.otu_ids.slice(0, 10);
+        var ids = firstSample.otu_ids;
         console.log(ids);
         var labels = firstSample.otu_labels.slice(0, 10).reverse();
         console.log(labels);
@@ -120,8 +120,10 @@ function buildCharts(sample) {
           height:500,
           xaxis: {
             title: "OTU ID"
-          }
-        };
+          },
+          //hovermode: "closest"
+          };
+
         // 3. Use Plotly to plot the data with the layout.
         Plotly.newPlot("bubble", bubbleData, bubbleLayout)
 
