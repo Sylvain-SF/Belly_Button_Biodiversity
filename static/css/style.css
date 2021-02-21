@@ -1,0 +1,15 @@
+
+body {
+
+  color: black;
+  background-color: lightblue;
+}
+p {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-image: url("../images/background_images.jpg");
+  background-size: 100% 100%;
+  text-align: center;
